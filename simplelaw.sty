@@ -1,0 +1,32 @@
+\ProvidesPackage{simplelaw}
+\newcounter{lawchapternum}
+\setcounter{lawchapternum}{0}
+\newcommand\lawchapter[1]{
+    \refstepcounter{lawchapternum}
+    \section*{Capítulo \@Roman\c@lawchapternum: #1}
+    \addcontentsline{toc}{section}{Capítulo \@Roman\c@lawchapternum. #1}
+}
+\newcommand\lawchapterf[1]{
+    \section*{#1}
+    \addcontentsline{toc}{section}{#1}
+}
+\newcommand\lawsection[1]{
+    \subsection*{#1}
+    \addcontentsline{toc}{subsection}{#1}
+}
+\newcommand\lawsubsection[1]{
+    \subsubsection*{#1}
+}
+\newcounter{partnum}
+\setcounter{partnum}{0}
+\newcounter{articlenum}
+\setcounter{articlenum}{0}
+\newcommand\article{
+    \setcounter{partnum}{0}
+    \refstepcounter{articlenum}
+    \paragraph{\textsc{Artículo \@arabic\c@articlenum}}
+}
+\newcommand\articlepart[1]{
+    \refstepcounter{partnum}
+    \paragraph{\alph{partnum}) #1}
+}
