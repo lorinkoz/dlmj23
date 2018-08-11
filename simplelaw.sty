@@ -17,12 +17,11 @@
 \newcommand\lawsubsection[1]{
     \subsubsection*{#1}
 }
-\newcounter{partnum}
-\setcounter{partnum}{0}
 \newcounter{articlenum}
+\newcounter{partnum}[articlenum]
 \setcounter{articlenum}{0}
+\setcounter{partnum}{0}
 \newcommand\article{
-    \setcounter{partnum}{0}
     \refstepcounter{articlenum}
     \paragraph{\textsc{Artículo \@arabic\c@articlenum}}
 }
