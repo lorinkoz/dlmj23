@@ -1,0 +1,5 @@
+sudo: required
+services: docker
+script:
+  - docker pull rekka/tectonic
+  - docker run --mount src=$TRAVIS_BUILD_DIR,target=/usr/src/tex,type=bind rekka/tectonic tectonic disciplina.tex
